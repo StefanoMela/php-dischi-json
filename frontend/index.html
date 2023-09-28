@@ -27,12 +27,12 @@
         <div class="container">
             <div v-for="(disc, index) in discList" class="card">
                 <div class="card-body">
-                    <img src="..." class="card-img-top">
-                    <h4 class="card-title mt-3">{{ disc.title}}</h4>
+                    <img :src="disc.poster" class="card-img-top">
+                    <h4 class="card-title mt-3">{{ disc.title}} {{ index }}</h4>
                     <h4 class="card-text">{{disc.author}}</h4>
                     <h5 class="card-text">{{disc.year}}</h5>
                     <h5 class="card-text">{{disc.genre}}</h5>
-                    <a href="#" class="btn btn-primary" @click="getThumb()">Get Info</a>
+                    <a href="#" class="btn btn-primary" @click="getThumb(index)">Get Info</a>
                 </div>
             </div>
         </div>

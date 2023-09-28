@@ -8,8 +8,21 @@ createApp({
     };
   },
 
-  // onclick method recupero index e stampo in base index 
+  methods: {
 
+    getThumb(index){
+
+      this.discIndex = index;
+
+      console.log(this.discIndex);
+
+      axios.get('http://localhost:8888/php-dischi-json/backend/api/get-dischi.php')
+      .then((response) => {
+
+        console.log(response.data[index]);
+      });
+    },
+  },
   mounted() {
     axios.get('http://localhost:8888/php-dischi-json/backend/api/get-dischi.php')
       .then((response) => {

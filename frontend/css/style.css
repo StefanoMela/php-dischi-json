@@ -8,4 +8,12 @@
 .card {
 
     display: flex;
+
+}
+
+
+.card-img-top{
+
+    max-width: 300px;
+    aspect-ratio: 1;
 }
