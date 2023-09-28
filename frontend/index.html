@@ -15,7 +15,7 @@
     <!-- AXIOS -->
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- VUE APP -->
-    <script src="./main.js" defer></script>
+    <script src="./js/main.js" defer></script>
     <!-- CSS -->
     <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="./css/style.css">
@@ -28,11 +28,11 @@
             <div v-for="(disc, index) in discList" class="card">
                 <div class="card-body">
                     <img :src="disc.poster" class="card-img-top">
-                    <h4 class="card-title mt-3">{{ disc.title}} {{ index }}</h4>
+                    <h4 class="card-title mt-3">{{ disc.title}}</h4>
                     <h4 class="card-text">{{disc.author}}</h4>
                     <h5 class="card-text">{{disc.year}}</h5>
                     <h5 class="card-text">{{disc.genre}}</h5>
-                    <a href="#" class="btn btn-primary" @click="getThumb(index)">Get Info</a>
+                    <a :href="'./single.php?index='+index" class="btn btn-primary">Get Info</a>
                 </div>
             </div>
         </div>
