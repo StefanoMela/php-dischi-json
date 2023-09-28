@@ -16,19 +16,23 @@
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- VUE APP -->
     <script src="./main.js" defer></script>
+    <!-- CSS -->
+    <link rel="stylesheet" href="./css/reset.css">
+    <link rel="stylesheet" href="./css/style.css">
     <title>PHP Dischi JSON</title>
 </head>
 
 <body>
     <div id="app">
-        <div class="container d-flex">
-            <div v-for="disc in discList" class="card m-3" style="width: 18rem;">
+        <div class="container">
+            <div v-for="(disc, index) in discList" class="card">
                 <div class="card-body">
-                    <h5 class="card-title">{{ disc.title}}</h5>
-                    <h5 class="card-text">{{disc.artist}}</h5>
+                    <img src="..." class="card-img-top">
+                    <h4 class="card-title mt-3">{{ disc.title}}</h4>
+                    <h4 class="card-text">{{disc.author}}</h4>
                     <h5 class="card-text">{{disc.year}}</h5>
                     <h5 class="card-text">{{disc.genre}}</h5>
-                    <a href="#" class="btn btn-primary">Get Info</a>
+                    <a href="#" class="btn btn-primary" @click="getThumb()">Get Info</a>
                 </div>
             </div>
         </div>
